@@ -8,9 +8,16 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "fogline-pack": "node bin/fogline-pack.js"
   },
   "dependencies": {
-    "@fogline/pack-format": "workspace:*"
+    "@fogline/pack-format": "workspace:*",
+    "fflate": "^0.8.3",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15"
+  },
+  "bin": {
+    "fogline-pack": "./bin/fogline-pack.js"
   }
 }

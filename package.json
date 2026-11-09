@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:coverage": "pnpm -r --if-present run coverage",
     "format": "prettier --write .",
-    "check": "pnpm lint && pnpm depcruise && pnpm typecheck && pnpm test"
+    "check": "pnpm lint && pnpm depcruise && pnpm typecheck && pnpm test",
+    "fogline-pack": "node packages/pack-tools/bin/fogline-pack.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

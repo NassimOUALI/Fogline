@@ -15,6 +15,10 @@ export const sharedTestConfig: UserConfig = {
         replacement: `${root}packages/core/src/testing/index.ts`,
       },
       { find: /^@fogline\/core$/, replacement: `${root}packages/core/src/index.ts` },
+      {
+        find: /^@fogline\/pack-format\/testing$/,
+        replacement: `${root}packages/pack-format/test/index.ts`,
+      },
       { find: /^@fogline\/pack-format$/, replacement: `${root}packages/pack-format/src/index.ts` },
       { find: /^@fogline\/pack-tools$/, replacement: `${root}packages/pack-tools/src/index.ts` },
     ],

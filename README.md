@@ -41,6 +41,21 @@ pnpm test         # vitest only
 pnpm format       # prettier --write
 ```
 
+### The `fogline-pack` CLI
+
+Run from the repository root (outputs under `local-packs/` are ignored by git):
+
+```bash
+pnpm fogline-pack demo local-packs/demo                 # generate a valid demo pack (procedural imagery)
+pnpm fogline-pack demo local-packs/big --markers 20000  # stress-test pack
+pnpm fogline-pack validate local-packs/demo             # errors and warnings; exit 1 on errors; --json
+pnpm fogline-pack inspect local-packs/demo              # summary of a folder or .fogpack; --json
+pnpm fogline-pack archive local-packs/demo local-packs/demo.fogpack
+pnpm fogline-pack tiles my-map.png my-pack/maps/world   # slice an image into xyz tiles + map entry
+```
+
+`pnpm fogline-pack --help` lists every option.
+
 ### Project structure
 
 ```
@@ -59,5 +74,5 @@ Dependencies point inward only: `desktop -> core -> pack-format`, `pack-tools ->
 These rules are enforced by ESLint (`no-restricted-imports`, see `eslint.config.js`) and by
 dependency-cruiser (`.dependency-cruiser.cjs`); `pnpm check` fails on any violation.
 
-Status: Stage 1 (monorepo scaffold) complete. See `docs/05-roadmap-and-decisions.md` for the
+Status: Stages 1-4 complete (scaffold, pack-format, core, pack-tools CLI). See `docs/05-roadmap-and-decisions.md` for the
 roadmap and the "Assumptions made" log.

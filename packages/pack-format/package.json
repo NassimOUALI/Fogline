@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Fogline pack format: schemas, validator, migrations, palette helpers.",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./testing": "./test/index.ts"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
