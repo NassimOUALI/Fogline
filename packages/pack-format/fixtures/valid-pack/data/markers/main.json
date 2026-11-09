@@ -1,0 +1,24 @@
+[
+  {
+    "id": "m-001",
+    "category": "loot-common",
+    "position": { "x": 100, "y": 100 },
+    "name": { "en": "Roadside chest" },
+    "attributes": [{ "key": "rarity", "label": "Rarity", "value": "Common" }]
+  },
+  {
+    "id": "m-002",
+    "category": "loot-rare",
+    "position": { "x": 400, "y": 300 },
+    "name": "Hidden chest",
+    "description": { "en": "Behind the rocks." },
+    "article": "notes"
+  },
+  {
+    "id": "m-003",
+    "category": "camps",
+    "position": { "x": 256, "y": 256 },
+    "name": { "en": "Central camp" },
+    "tags": ["region:center"]
+  }
+]

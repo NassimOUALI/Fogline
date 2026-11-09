@@ -76,6 +76,12 @@ export default tseslint.config(
   {
     files: ['packages/core/src/**/*.ts'],
     rules: {
+      'no-restricted-globals': [
+        'error',
+        ...['window', 'document', 'navigator', 'localStorage', 'sessionStorage', 'fetch'].map(
+          (name) => ({ name, message: `core must not use the browser global ${name}.` }),
+        ),
+      ],
       'no-restricted-imports': [
         'error',
         { patterns: [patterns.nodeIo, patterns.tauri, patterns.ui, patterns.apps] },

@@ -1,0 +1,90 @@
+{
+  "$id": "https://fogline.dev/schemas/v1/library.schema.json",
+  "title": "Fogline library",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "packId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "description": "Stable identifier"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Resolved title in the pack default language"
+          },
+          "gameName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$",
+            "description": "Semantic version"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Absolute path of the pack folder"
+          },
+          "source": {
+            "type": "string",
+            "enum": ["referenced", "copied"]
+          },
+          "importedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "description": "ISO 8601 timestamp"
+          },
+          "lastOpenedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+            "description": "ISO 8601 timestamp"
+          },
+          "thumbnail": {
+            "description": "Cached thumbnail, relative to the app data folder",
+            "type": "string"
+          },
+          "markerCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "status": {
+            "type": "string",
+            "enum": ["available", "missing"],
+            "description": "Cached; recomputed on launch"
+          }
+        },
+        "required": [
+          "packId",
+          "title",
+          "gameName",
+          "version",
+          "path",
+          "source",
+          "importedAt",
+          "markerCount",
+          "status"
+        ],
+        "description": "One known pack"
+      }
+    }
+  },
+  "required": ["formatVersion", "entries"],
+  "description": "Fogline library registry (library.json)"
+}

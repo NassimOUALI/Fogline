@@ -6,3 +6,5 @@ examples
 docs
 README.md
 *.md
+packages/pack-format/schemas
+packages/pack-format/fixtures

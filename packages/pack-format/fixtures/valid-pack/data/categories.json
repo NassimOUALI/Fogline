@@ -1,0 +1,11 @@
+[
+  {
+    "id": "loot",
+    "name": { "en": "Loot" },
+    "children": [
+      { "id": "loot-common", "name": { "en": "Common" }, "color": "#9aa3ad" },
+      { "id": "loot-rare", "name": { "en": "Rare" }, "color": "#d9a441" }
+    ]
+  },
+  { "id": "camps", "name": { "en": "Camps" }, "icon": "icons/camp.svg", "color": "#3fbf8f" }
+]

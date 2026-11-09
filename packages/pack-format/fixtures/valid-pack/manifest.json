@@ -1,0 +1,35 @@
+{
+  "formatVersion": 1,
+  "id": "dev.fogline.fixture",
+  "game": { "name": "Fixture Game" },
+  "title": { "en": "Fixture pack", "fr": "Pack de test" },
+  "description": "Small valid pack used by the pack-format tests.",
+  "version": "1.0.0",
+  "authors": [{ "name": "Fogline tests" }],
+  "license": { "spdx": "CC0-1.0" },
+  "defaultLanguage": "en",
+  "theme": {
+    "palette": {
+      "accent": "#c98a3c",
+      "background": "#1b1712",
+      "surface": "#261f18",
+      "text": "#efe6d8",
+      "mapBackdrop": "#0f0c09"
+    }
+  },
+  "maps": [
+    {
+      "id": "main",
+      "name": { "en": "Main" },
+      "order": 1,
+      "size": { "width": 512, "height": 512 },
+      "tileSize": 256,
+      "minZoom": 0,
+      "maxZoom": 1,
+      "tiles": { "type": "xyz", "path": "maps/main/tiles" },
+      "thumbnail": "maps/main/thumbnail.webp"
+    }
+  ],
+  "categories": "data/categories.json",
+  "markers": { "main": "data/markers/main.json" }
+}

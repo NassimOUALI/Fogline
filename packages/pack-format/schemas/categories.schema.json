@@ -1,0 +1,63 @@
+{
+  "$id": "https://fogline.dev/schemas/v1/categories.schema.json",
+  "title": "Fogline categories",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/__schema0"
+  },
+  "description": "Fogline category tree (data/categories.json)",
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "description": "Stable identifier"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+                "description": "BCP 47 language tag"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          ],
+          "description": "Plain string or map of language tag to text"
+        },
+        "icon": {
+          "description": "SVG icon path relative to the pack",
+          "type": "string",
+          "minLength": 1
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "description": "Color in #RRGGBB form"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      },
+      "required": ["id", "name"],
+      "description": "Category tree node"
+    }
+  }
+}
