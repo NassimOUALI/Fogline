@@ -30,7 +30,10 @@
             "type": "number"
           }
         },
-        "required": ["x", "y"],
+        "required": [
+          "x",
+          "y"
+        ],
         "description": "Position in map pixel space"
       },
       "name": {
@@ -137,7 +140,11 @@
               ]
             }
           },
-          "required": ["key", "label", "value"],
+          "required": [
+            "key",
+            "label",
+            "value"
+          ],
           "description": "Generic key/label/value shown in the detail panel"
         }
       },
@@ -156,7 +163,12 @@
         }
       }
     },
-    "required": ["id", "category", "position", "name"],
+    "required": [
+      "id",
+      "category",
+      "position",
+      "name"
+    ],
     "description": "One marker on a map"
   },
   "description": "Fogline marker list for one map (data/markers/<mapId>.json)"

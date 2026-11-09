@@ -20,6 +20,7 @@
     "noEmit": true,
     "paths": {
       "@fogline/core": ["./packages/core/src/index.ts"],
+      "@fogline/core/testing": ["./packages/core/src/testing/index.ts"],
       "@fogline/pack-format": ["./packages/pack-format/src/index.ts"],
       "@fogline/pack-tools": ["./packages/pack-tools/src/index.ts"]
     }

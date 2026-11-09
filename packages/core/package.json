@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Fogline domain, use cases and ports. Pure TypeScript, no I/O.",
+  "description": "Fogline domain, use cases and ports. Pure TypeScript, no I/O. ./testing holds in-memory adapters and contract suites.",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./testing": "./src/testing/index.ts"
   },
   "scripts": {
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@fogline/pack-format": "workspace:*"

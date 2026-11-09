@@ -41,7 +41,10 @@
           },
           "source": {
             "type": "string",
-            "enum": ["referenced", "copied"]
+            "enum": [
+              "referenced",
+              "copied"
+            ]
           },
           "importedAt": {
             "type": "string",
@@ -66,7 +69,10 @@
           },
           "status": {
             "type": "string",
-            "enum": ["available", "missing"],
+            "enum": [
+              "available",
+              "missing"
+            ],
             "description": "Cached; recomputed on launch"
           }
         },
@@ -85,6 +91,9 @@
       }
     }
   },
-  "required": ["formatVersion", "entries"],
+  "required": [
+    "formatVersion",
+    "entries"
+  ],
   "description": "Fogline library registry (library.json)"
 }

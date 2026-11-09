@@ -55,6 +55,10 @@ export const progressExportSchema = z
     collected: collectedSchema.default({}),
     customMarkers: z.array(customMarkerSchema).default([]),
     filters: filterStateSchema.default({ hiddenNodeIds: [], hideCollected: false }),
+    markersNoLongerInPack: z
+      .array(z.string())
+      .optional()
+      .describe('Collected marker ids the pack no longer contains (informational)'),
   })
   .describe('Fogline progress export file');
 export type ProgressExport = z.infer<typeof progressExportSchema>;

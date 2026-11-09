@@ -30,6 +30,13 @@ module.exports = {
       },
     },
     {
+      name: 'core-uses-pack-format-types-only',
+      severity: 'error',
+      comment: 'docs/01: core -> pack-format (types only). Runtime validation lives in adapters.',
+      from: { path: '^packages/core/src' },
+      to: { path: '^packages/pack-format', dependencyTypesNot: ['type-only'] },
+    },
+    {
       name: 'pack-format-no-core',
       severity: 'error',
       comment: 'pack-format is shared by app and CLI and sits below core.',

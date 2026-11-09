@@ -56,7 +56,10 @@
           }
         }
       },
-      "required": ["id", "name"],
+      "required": [
+        "id",
+        "name"
+      ],
       "description": "Category tree node"
     }
   }

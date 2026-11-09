@@ -69,7 +69,10 @@
                 "type": "number"
               }
             },
-            "required": ["x", "y"],
+            "required": [
+              "x",
+              "y"
+            ],
             "description": "Position in map pixel space"
           },
           "name": {
@@ -86,7 +89,13 @@
             "description": "ISO 8601 timestamp"
           }
         },
-        "required": ["id", "map", "position", "name", "createdAt"],
+        "required": [
+          "id",
+          "map",
+          "position",
+          "name",
+          "createdAt"
+        ],
         "description": "A personal pin added by the user"
       }
     },
@@ -132,17 +141,28 @@
               "type": "number"
             }
           },
-          "required": ["x", "y"],
+          "required": [
+            "x",
+            "y"
+          ],
           "description": "Position in map pixel space"
         },
         "zoom": {
           "type": "number"
         }
       },
-      "required": ["map", "center", "zoom"],
+      "required": [
+        "map",
+        "center",
+        "zoom"
+      ],
       "description": "Viewport to restore on reopen"
     }
   },
-  "required": ["formatVersion", "packId", "updatedAt"],
+  "required": [
+    "formatVersion",
+    "packId",
+    "updatedAt"
+  ],
   "description": "Fogline per-pack progress (progress/<packId>.json)"
 }

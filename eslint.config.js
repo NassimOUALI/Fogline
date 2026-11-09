@@ -71,6 +71,11 @@ export default tseslint.config(
       '@typescript-eslint/explicit-module-boundary-types': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
+      // Adapters implement port methods whose arguments they may not need.
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   },
   {
@@ -82,9 +87,22 @@ export default tseslint.config(
           (name) => ({ name, message: `core must not use the browser global ${name}.` }),
         ),
       ],
-      'no-restricted-imports': [
+      // The typescript-eslint variant understands `import type`, which core may use for
+      // pack-format (docs/01: "core -> pack-format (types only)").
+      'no-restricted-imports': 'off',
+      '@typescript-eslint/no-restricted-imports': [
         'error',
-        { patterns: [patterns.nodeIo, patterns.tauri, patterns.ui, patterns.apps] },
+        {
+          paths: [
+            {
+              name: '@fogline/pack-format',
+              allowTypeImports: true,
+              message:
+                'core may only import types from pack-format; validation runs in adapters behind PackReader.',
+            },
+          ],
+          patterns: [patterns.nodeIo, patterns.tauri, patterns.ui, patterns.apps],
+        },
       ],
     },
   },

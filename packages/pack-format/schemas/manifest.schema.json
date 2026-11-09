@@ -26,7 +26,9 @@
           "type": "string"
         }
       },
-      "required": ["name"]
+      "required": [
+        "name"
+      ]
     },
     "title": {
       "anyOf": [
@@ -90,7 +92,9 @@
             "format": "uri"
           }
         },
-        "required": ["name"]
+        "required": [
+          "name"
+        ]
       }
     },
     "license": {
@@ -105,7 +109,9 @@
           "type": "string"
         }
       },
-      "required": ["spdx"],
+      "required": [
+        "spdx"
+      ],
       "description": "Rights status of the pack content"
     },
     "attribution": {
@@ -151,7 +157,9 @@
               "description": "Color in #RRGGBB form"
             }
           },
-          "required": ["accent"],
+          "required": [
+            "accent"
+          ],
           "description": "Per-game color palette"
         }
       }
@@ -210,7 +218,10 @@
                 "maximum": 9007199254740991
               }
             },
-            "required": ["width", "height"],
+            "required": [
+              "width",
+              "height"
+            ],
             "description": "Source image size at full resolution"
           },
           "tileSize": {
@@ -245,7 +256,10 @@
                     "description": "Folder holding {z}/{x}/{y}.webp tiles"
                   }
                 },
-                "required": ["type", "path"]
+                "required": [
+                  "type",
+                  "path"
+                ]
               },
               {
                 "type": "object",
@@ -260,7 +274,10 @@
                     "description": "Path to a .pmtiles archive"
                   }
                 },
-                "required": ["type", "path"]
+                "required": [
+                  "type",
+                  "path"
+                ]
               }
             ],
             "description": "Where the tiles of a map live"
@@ -279,7 +296,15 @@
             "additionalProperties": {}
           }
         },
-        "required": ["id", "name", "order", "size", "minZoom", "maxZoom", "tiles"],
+        "required": [
+          "id",
+          "name",
+          "order",
+          "size",
+          "minZoom",
+          "maxZoom",
+          "tiles"
+        ],
         "description": "One map of the pack"
       }
     },

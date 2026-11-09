@@ -69,7 +69,10 @@
                 "type": "number"
               }
             },
-            "required": ["x", "y"],
+            "required": [
+              "x",
+              "y"
+            ],
             "description": "Position in map pixel space"
           },
           "name": {
@@ -86,7 +89,13 @@
             "description": "ISO 8601 timestamp"
           }
         },
-        "required": ["id", "map", "position", "name", "createdAt"],
+        "required": [
+          "id",
+          "map",
+          "position",
+          "name",
+          "createdAt"
+        ],
         "description": "A personal pin added by the user"
       }
     },
@@ -111,8 +120,20 @@
         }
       },
       "description": "Filter state of the category tree"
+    },
+    "markersNoLongerInPack": {
+      "description": "Collected marker ids the pack no longer contains (informational)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
-  "required": ["formatVersion", "packId", "packVersion", "exportedAt"],
+  "required": [
+    "formatVersion",
+    "packId",
+    "packVersion",
+    "exportedAt"
+  ],
   "description": "Fogline progress export file"
 }
