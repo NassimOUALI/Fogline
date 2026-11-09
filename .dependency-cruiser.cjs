@@ -20,14 +20,7 @@ module.exports = {
       severity: 'error',
       comment: 'core must not depend on React, Tauri or the map engine.',
       from: { path: '^packages/core/src' },
-      to: {
-        path: [
-          'node_modules/react',
-          'node_modules/react-dom',
-          'node_modules/@tauri-apps',
-          'node_modules/leaflet',
-        ],
-      },
+      to: { path: ['(^|/)react(-dom)?(/|$)', '(^|/)@tauri-apps/', '(^|/)leaflet(/|$)'] },
     },
     {
       name: 'core-uses-pack-format-types-only',
@@ -49,6 +42,29 @@ module.exports = {
       comment: 'pack-tools depends only on pack-format.',
       from: { path: '^packages/pack-tools/src' },
       to: { path: ['^packages/core', '^apps/'] },
+    },
+    {
+      name: 'desktop-ui-no-tauri-or-adapters',
+      severity: 'error',
+      comment: 'The UI uses services from the composition root, never Tauri or adapters directly.',
+      from: { path: '^apps/desktop/src/ui', pathNot: '\\.test\\.tsx?$' },
+      to: { path: ['^apps/desktop/src/adapters', '(^|/)@tauri-apps/'] },
+    },
+    {
+      name: 'no-test-helpers-in-production',
+      severity: 'error',
+      comment: 'Testing kits import Vitest; production code must not ship them.',
+      from: {
+        path: '^(apps|packages)/[^/]+/src',
+        pathNot: ['\\.test\\.tsx?$', '/src/test/', '^packages/core/src/testing/'],
+      },
+      to: {
+        path: [
+          '^packages/core/src/testing/',
+          '^packages/pack-format/test/',
+          '^apps/desktop/src/test/',
+        ],
+      },
     },
     {
       name: 'no-circular',
@@ -74,6 +90,8 @@ module.exports = {
       mainFields: ['module', 'main', 'types', 'typings'],
       extensions: ['.ts', '.tsx', '.js', '.cjs', '.mjs', '.json'],
     },
-    exclude: { path: ['node_modules', '\\.d\\.ts$'] },
+    // npm packages stay in the graph as leaves (doNotFollow) so rules can match them;
+    // excluding node_modules would hide every resolved third-party import from the rules.
+    exclude: { path: ['\\.d\\.ts$'] },
   },
 };

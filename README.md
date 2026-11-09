@@ -56,6 +56,17 @@ pnpm fogline-pack tiles my-map.png my-pack/maps/world   # slice an image into xy
 
 `pnpm fogline-pack --help` lists every option.
 
+### The desktop app
+
+Needs the Tauri prerequisites (Rust with MSVC on Windows): <https://v2.tauri.app/start/prerequisites/>.
+
+```bash
+pnpm --filter @fogline/desktop tauri dev     # run the app
+pnpm --filter @fogline/desktop tauri build   # installer
+```
+
+A manual test script for the library screen is in `docs/manual-tests/stage-5-desktop.md`.
+
 ### Project structure
 
 ```
@@ -74,5 +85,5 @@ Dependencies point inward only: `desktop -> core -> pack-format`, `pack-tools ->
 These rules are enforced by ESLint (`no-restricted-imports`, see `eslint.config.js`) and by
 dependency-cruiser (`.dependency-cruiser.cjs`); `pnpm check` fails on any violation.
 
-Status: Stages 1-4 complete (scaffold, pack-format, core, pack-tools CLI). See `docs/05-roadmap-and-decisions.md` for the
+Status: Stages 1-5 complete (scaffold, pack-format, core, pack-tools CLI, desktop shell and library). See `docs/05-roadmap-and-decisions.md` for the
 roadmap and the "Assumptions made" log.

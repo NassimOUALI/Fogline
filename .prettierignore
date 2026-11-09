@@ -8,3 +8,6 @@ README.md
 *.md
 packages/pack-format/schemas
 packages/pack-format/fixtures
+apps/desktop/src-tauri/target
+apps/desktop/src-tauri/gen
+apps/desktop/src-tauri/icons

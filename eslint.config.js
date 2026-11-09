@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 /**
  * Architectural boundaries, enforced at the import-statement level.
@@ -110,6 +111,40 @@ export default tseslint.config(
     files: ['packages/pack-format/src/**/*.ts', 'packages/pack-tools/src/**/*.ts'],
     rules: {
       'no-restricted-imports': ['error', { patterns: [patterns.core, patterns.apps] }],
+    },
+  },
+  {
+    files: ['apps/desktop/src/**/*.{ts,tsx}'],
+    plugins: { 'react-hooks': reactHooks },
+    rules: {
+      ...reactHooks.configs.flat['recommended-latest'].rules,
+    },
+  },
+  {
+    // The UI reaches files, Tauri and adapters only through the services built at the
+    // composition root (src/services), so it stays testable without the desktop shell.
+    files: ['apps/desktop/src/ui/**/*.{ts,tsx}'],
+    ignores: ['**/*.test.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@tauri-apps/*'],
+              message: 'UI code must not call Tauri directly; add a port or service instead.',
+            },
+            {
+              group: ['**/adapters/**', '**/adapters'],
+              message: 'UI code must not import adapters; use the services from useServices().',
+            },
+            {
+              group: ['@fogline/core/testing', '@fogline/pack-format/testing', '**/test/**'],
+              message: 'Test helpers are for tests only.',
+            },
+          ],
+        },
+      ],
     },
   },
   {
