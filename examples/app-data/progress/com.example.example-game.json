@@ -1,0 +1,25 @@
+{
+  "formatVersion": 1,
+  "packId": "com.example.example-game",
+  "packVersionSeen": "1.2.0",
+  "updatedAt": "2026-10-18T15:52:30Z",
+  "collected": {
+    "ow-chest-001": "2026-10-11T20:14:00Z",
+    "ow-waypoint-001": "2026-10-11T20:20:41Z"
+  },
+  "customMarkers": [
+    {
+      "id": "custom-0001",
+      "map": "overworld",
+      "position": { "x": 1750, "y": 1900 },
+      "name": "Good camping spot",
+      "note": "Safe at night.",
+      "createdAt": "2026-10-12T19:05:00Z"
+    }
+  ],
+  "filters": {
+    "hiddenNodeIds": ["chest-common"],
+    "hideCollected": true
+  },
+  "lastView": { "map": "overworld", "center": { "x": 1600, "y": 1200 }, "zoom": 2 }
+}

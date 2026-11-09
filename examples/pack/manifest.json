@@ -1,0 +1,49 @@
+{
+  "formatVersion": 1,
+  "id": "com.example.example-game",
+  "game": { "name": "Example Game", "publisher": "Example Studio" },
+  "title": { "en": "Example Game - Complete Map", "fr": "Example Game - Carte complète" },
+  "description": "A fictional pack used to document the format.",
+  "version": "1.2.0",
+  "authors": [{ "name": "Pack Author", "url": "https://example.com/author" }],
+  "license": { "spdx": "CC-BY-4.0", "notes": "Fictional example. Real packs must state the rights status of their imagery." },
+  "attribution": ["Marker data collected by the example community"],
+  "defaultLanguage": "en",
+  "theme": {
+    "palette": {
+      "accent": "#c98a3c",
+      "background": "#1b1712",
+      "surface": "#261f18",
+      "text": "#efe6d8",
+      "mapBackdrop": "#0f0c09"
+    }
+  },
+  "maps": [
+    {
+      "id": "overworld",
+      "name": { "en": "Overworld" },
+      "order": 1,
+      "size": { "width": 4096, "height": 3072 },
+      "tileSize": 256,
+      "minZoom": 0,
+      "maxZoom": 4,
+      "tiles": { "type": "xyz", "path": "maps/overworld/tiles" },
+      "thumbnail": "maps/overworld/thumbnail.webp"
+    },
+    {
+      "id": "caves",
+      "name": { "en": "Caves" },
+      "order": 2,
+      "size": { "width": 2048, "height": 2048 },
+      "tileSize": 256,
+      "minZoom": 0,
+      "maxZoom": 3,
+      "tiles": { "type": "pmtiles", "path": "maps/caves/tiles.pmtiles" }
+    }
+  ],
+  "categories": "data/categories.json",
+  "markers": {
+    "overworld": "data/markers/overworld.json",
+    "caves": "data/markers/caves.json"
+  }
+}

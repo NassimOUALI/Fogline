@@ -1,0 +1,31 @@
+{
+  "formatVersion": 1,
+  "entries": [
+    {
+      "packId": "com.example.example-game",
+      "title": "Example Game - Complete Map",
+      "gameName": "Example Game",
+      "version": "1.2.0",
+      "path": "D:/Packs/example-game",
+      "source": "referenced",
+      "importedAt": "2026-10-10T18:02:11Z",
+      "lastOpenedAt": "2026-10-18T15:40:02Z",
+      "thumbnail": "thumbnails/com.example.example-game.webp",
+      "markerCount": 9,
+      "status": "available"
+    },
+    {
+      "packId": "com.example.other-game",
+      "title": "Other Game - World Atlas",
+      "gameName": "Other Game",
+      "version": "0.9.1",
+      "path": "E:/External/other-game-pack",
+      "source": "referenced",
+      "importedAt": "2026-09-02T09:15:00Z",
+      "lastOpenedAt": "2026-09-30T21:10:45Z",
+      "thumbnail": "thumbnails/com.example.other-game.webp",
+      "markerCount": 412,
+      "status": "missing"
+    }
+  ]
+}

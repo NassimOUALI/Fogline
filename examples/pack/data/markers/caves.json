@@ -1,0 +1,21 @@
+[
+  {
+    "id": "cv-chest-001",
+    "category": "chest-rare",
+    "position": { "x": 600, "y": 1400 },
+    "name": { "en": "Deep cave chest" },
+    "attributes": [{ "key": "rarity", "label": "Rarity", "value": "Rare" }]
+  },
+  {
+    "id": "cv-relic-001",
+    "category": "relics",
+    "position": { "x": 1500, "y": 500 },
+    "name": { "en": "Buried idol" }
+  },
+  {
+    "id": "cv-waypoint-001",
+    "category": "waypoints",
+    "position": { "x": 1000, "y": 1000 },
+    "name": { "en": "Cave entrance waypoint" }
+  }
+]

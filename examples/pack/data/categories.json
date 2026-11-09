@@ -1,0 +1,27 @@
+[
+  {
+    "id": "chests",
+    "name": { "en": "Chests" },
+    "icon": "icons/chest.svg",
+    "children": [
+      { "id": "chest-common", "name": { "en": "Common" }, "color": "#9aa3ad" },
+      { "id": "chest-rare", "name": { "en": "Rare" }, "color": "#d9a441" }
+    ]
+  },
+  {
+    "id": "collectibles",
+    "name": { "en": "Collectibles" },
+    "children": [
+      {
+        "id": "shrines",
+        "name": { "en": "Shrines" },
+        "children": [
+          { "id": "shrine-fire", "name": { "en": "Fire shrine" }, "color": "#d9534f" },
+          { "id": "shrine-water", "name": { "en": "Water shrine" }, "color": "#4a9bd9" }
+        ]
+      },
+      { "id": "relics", "name": { "en": "Relics" }, "color": "#8f5fd6" }
+    ]
+  },
+  { "id": "waypoints", "name": { "en": "Waypoints" }, "icon": "icons/waypoint.svg", "color": "#3fbf8f" }
+]

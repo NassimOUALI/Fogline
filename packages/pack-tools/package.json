@@ -1,0 +1,16 @@
+{
+  "name": "@fogline/pack-tools",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "fogline-pack CLI: validate, demo, tiles, archive, inspect.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fogline/pack-format": "workspace:*"
+  }
+}

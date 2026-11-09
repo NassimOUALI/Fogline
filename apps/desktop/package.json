@@ -1,0 +1,10 @@
+{
+  "name": "@fogline/desktop",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Fogline desktop app (Tauri 2 + React). Built in Stage 5.",
+  "scripts": {
+    "typecheck": "echo desktop: nothing to typecheck yet"
+  }
+}

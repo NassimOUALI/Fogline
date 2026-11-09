@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+target/
+*.fogpack
+*.pmtiles
+local-packs/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+{
+  "name": "@fogline/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Fogline domain, use cases and ports. Pure TypeScript, no I/O.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fogline/pack-format": "workspace:*"
+  }
+}
